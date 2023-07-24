@@ -115,6 +115,42 @@ import {
     },
   ];
   
+  const technologiesMobile = [
+    {
+      name: "HTML 5",
+      icon: html,
+    },
+    {
+      name: "CSS 3",
+      icon: css,
+    },
+    {
+      name: "JavaScript",
+      icon: javascript,
+    },
+    {
+      name: "React JS",
+      icon: reactjs,
+    },
+    {
+      name: "Redux Toolkit",
+      icon: redux,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: tailwind,
+    },
+    {
+      name: "Node JS",
+      icon: nodejs,
+    },
+    {
+      name: "MongoDB",
+      icon: mongodb,
+    },
+  ];
+  
+
   const experiences = [
     {
       title: "Frontend Developer Co-op Student",
@@ -253,4 +289,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, hackathons, projects };
+  export { services, technologies, technologiesMobile, experiences, hackathons, projects };
