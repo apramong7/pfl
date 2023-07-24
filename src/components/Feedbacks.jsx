@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from 'framer-motion';
 
@@ -58,28 +59,58 @@ company, image, link }) => (
 )
 
 const Feedbacks = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
+
+
   return (
-    <div className='mt-12 bg-black-100 
-    rounded-[20px]'>
-      <div className={`${styles.padding} 
-      bg-tertiary rounded-2xl min-h-[300px]`}>
-        <motion.div
-          variants={textVariant()}
-        >
-          <p className={styles.sectionSubText}>Extended learning activities</p>
-          <h2 className={styles.sectionHeadText}>Hackathons and Challenges.</h2>
-        </motion.div>
+    <>
+    {isMobile 
+      ? null
+      : <div className='mt-12 bg-black-100 
+      rounded-[20px]'>
+        <div className={`${styles.padding} 
+        bg-tertiary rounded-2xl min-h-[300px]`}>
+          <motion.div
+            variants={textVariant()}
+          >
+            <p className={styles.sectionSubText}>Extended learning activities</p>
+            <h2 className={styles.sectionHeadText}>Hackathons and Challenges.</h2>
+          </motion.div>
+        </div>
+        <div className={`${styles.paddingX} flex flex-col gap-7`}>
+          {hackathons.map((hackathon, index) => (
+            <FeedbackCard 
+              key={hackathon.name}
+              index={index}
+              {...hackathon}
+            />
+          ))}
+        </div>
       </div>
-      <div className={`${styles.paddingX} flex flex-col gap-7`}>
-        {hackathons.map((hackathon, index) => (
-          <FeedbackCard 
-            key={hackathon.name}
-            index={index}
-            {...hackathon}
-          />
-        ))}
-      </div>
-    </div>
+    }
+   </>
   )
 }
 
