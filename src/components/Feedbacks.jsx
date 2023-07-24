@@ -21,7 +21,7 @@ company, image, link }) => (
       scale: 1,
       speed: 450
     }}
-    className='bg-tertiary p-5 rounded-2xl w-full'
+    className='bg-tertiary p-5 rounded-2xl s:w-[950px] w-full'
   >
     <div className="relative w-full h-[430px]">
       <img 
