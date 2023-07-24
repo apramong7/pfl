@@ -33,6 +33,7 @@ import semicorchea from './semicorchea.png';
 import lemontree from './lemonTree.png';
 import medilink from './medilink.png';
 import presentation from './presentation.png';
+import developer from './developer.png'
 
 export {
   logo,
@@ -65,5 +66,6 @@ export {
   workoutwatcher,
   lemontree,
   medilink,
-  presentation
+  presentation,
+  developer
 };

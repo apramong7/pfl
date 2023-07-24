@@ -2,6 +2,8 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
+import { developer } from '../../assets/index'
+
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
@@ -11,10 +13,10 @@ const Computers = ({ isMobile }) => {
     <mesh>
       <hemisphereLight intensity={0.15} groundColor='black' />
       <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
+        position={[-2, 50, 10]}
+        angle={0.5}
         penumbra={1}
-        intensity={1}
+        intensity={1.5}
         castShadow
         shadow-mapSize={1024}
       />
@@ -22,7 +24,7 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.5 : 1.15}
-        position={isMobile ? [0, -3, -2.2] : [0.3, -3.25, 0.01]}
+        position={isMobile ? [0, -3, -2.2] : [0.3, -3.7, 0.01]}
         rotation={[-0.03, 2.2, 0.01]}
       />
     </mesh>
@@ -56,7 +58,7 @@ const ComputersCanvas = () => {
   return (
     <>
     {isMobile
-    ? <p>Hello there</p>
+    ? <div style={{position: 'absolute', top: 400 }}><img src={developer} alt="" /></div>
     : <Canvas
     frameloop='demand'
     shadows
