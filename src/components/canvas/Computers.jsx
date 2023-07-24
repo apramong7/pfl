@@ -36,7 +36,7 @@ const ComputersCanvas = () => {
 
   useEffect(() => {
     // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 1300px)");
 
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
@@ -58,7 +58,7 @@ const ComputersCanvas = () => {
   return (
     <>
     {isMobile
-    ? <div style={{position: 'absolute', top: 400 }}><img src={developer} alt="" /></div>
+    ? <div className="flex items-center justify-center h-screen"><img src={developer} className="max-w-full max-h-full mt-29" style={{marginTop: '16rem'}} alt="" /></div>
     : <Canvas
     frameloop='demand'
     shadows
