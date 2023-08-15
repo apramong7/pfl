@@ -9,7 +9,7 @@ const Tech = () => {
 
   useEffect(() => {
     // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 1300px)");
 
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
@@ -35,8 +35,11 @@ const Tech = () => {
       {
         isMobile
         ? <>{technologiesMobile.map((technology) => (
-          <div className='w-28 h-20' key={technology.name}>
-            <BallCanvas icon={technology.icon} />
+          <div 
+            className='w-20 h-20 rounded-circle flex justify-center items-center' 
+            style={{background: '#7f5a83', backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)', borderRadius: '50%'}}
+            key={technology.name}>
+            <img style={{width: 70, height: 70}} src={technology.icon} />
           </div> 
         ))} </>
         : <>{technologies.map((technology) => (
