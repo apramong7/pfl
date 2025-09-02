@@ -1,117 +1,108 @@
-import { useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import { styles } from '../styles';
-import { SectionWrapper } from '../hoc';
-import { fadeIn, textVariant } from '../utils/motion';
-import { presentation } from '../assets';
+import { styles } from "../styles";
+import { SectionWrapper } from "../hoc";
+import { fadeIn, textVariant } from "../utils/motion";
 
-import { hackathons } from '../constants';
+import { hackathons } from "../constants";
+const FeedbackCard = ({
+  index,
+  description,
+  name,
+  place,
+  company,
+  image,
+  link,
+}) => (
+  <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <Tilt
+      options={{ max: 8, scale: 1, speed: 300 }}
+      className="
+        w-full md:w-3/4               /* ~75% on md+ */
+        max-w-[1100px]                /* cap */
+        mx-auto
+      "
+    >
+      {/* stack container */}
+      <div className="relative">
+        {/* back sheet */}
+        <div className="absolute inset-0 translate-x-1 translate-y-1 bg-black border-2 border-black z-10" />
 
-const FeedbackCard = ({ index, description, name, place,
-company, image, link }) => (
+        {/* front sheet */}
+        <div className="relative z-20 border-2 border-black bg-white overflow-hidden">
+          {/* browser bar */}
+          <div
+            className="
+              relative bg-gray-300 border-b-2 border-black
+              flex items-center justify-center
+              px-16                      /* keep text clear of the left circles */
+              h-auto min-h-[40px] py-2   /* default height */
+              [@media(max-width:554px)]:min-h-[64px]  /* taller when narrow */
+              [@media(max-width:554px)]:py-3
+            "
+          >
+            {/* circles, vertically centered */}
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 flex gap-2">
+              <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />
+              <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />
+            </div>
 
-<motion.div
-  variants={fadeIn('up', 'spring',
-  index * 0.5, 0.75)}
->
-  <Tilt
-    options={{
-      max: 45,
-      scale: 1,
-      speed: 450
-    }}
-    className='bg-tertiary p-5 rounded-2xl s:w-[950px] w-full'
-  >
-    <div className="relative w-full h-[430px]">
-      <img 
-        src={image}
-        alt={name}
-        className="w-full h-full object-cover
-        rounded-2xl"
-      />
-      <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-        <div
-          onClick={() => window.open(link, "_blank")}
-          className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-        >
-          <img
-            src={presentation}
-            alt='presentation link'
-            className='w-1/2 h-1/2 object-contain'
-            style={{background: '#fff'}}
-          />
+            <span className="text-black font-semibold text-center leading-snug break-words">
+              {[company, place].filter(Boolean).join(" — ")}
+            </span>
+          </div>
+
+          {/* hero image with responsive ratio */}
+          <div className="w-full border-b-2 border-black aspect-[16/9] sm:aspect-[21/9]">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* body */}
+          <div className="p-6">
+            <h3 className="text-black font-extrabold text-[28px] leading-tight">
+              {name}
+            </h3>
+            <p className="mt-4 text-black text-[16px] leading-7">
+              {description}
+            </p>
+
+            {link && (
+              <button
+                onClick={() => window.open(link, "_blank")}
+                className="mt-6 m-auto flex bg-gray-200 border-4 border-black px-6 py-3 text-[16px] font-semibold
+                           hover:-translate-y-0.5 hover:-translate-x-0.5 transition-transform text-black"
+                aria-label={`Open ${name}`}
+              >
+                View project
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-
-    <div className="mt-5">
-        <h3 className="text-white font-bold text-[24px]">{name}</h3>
-        <h4 className="text-white  text-[18px]">{company}</h4>
-        <p className="mt-2 text-secondary break-words text-[14px]">{description}</p>
-    </div>
-
-
-  </Tilt>
-</motion.div>
-
-)
+    </Tilt>
+  </motion.div>
+);
 
 const Feedbacks = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
-
-
   return (
     <>
-    {isMobile 
-      ? null
-      : <div className='mt-12 bg-black-100 
-      rounded-[20px]'>
-        <div className={`${styles.padding} 
-        bg-tertiary rounded-2xl min-h-[300px]`}>
-          <motion.div
-            variants={textVariant()}
-          >
-            <p className={styles.sectionSubText}>Extended learning activities</p>
-            <h2 className={styles.sectionHeadText}>Hackathons and Challenges.</h2>
-          </motion.div>
-        </div>
-        <div className={`${styles.paddingX} flex flex-col gap-7`}>
-          {hackathons.map((hackathon, index) => (
-            <FeedbackCard 
-              key={hackathon.name}
-              index={index}
-              {...hackathon}
-            />
-          ))}
-        </div>
+      <motion.div variants={textVariant()}>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          Hackathons and Challenges
+        </h2>
+      </motion.div>
+      <div className={`items-center flex flex-col gap-7`}>
+        {hackathons.map((hackathon, index) => (
+          <FeedbackCard key={hackathon.name} index={index} {...hackathon} />
+        ))}
       </div>
-    }
-   </>
-  )
-}
+    </>
+  );
+};
 
-export default SectionWrapper(Feedbacks, '');
+export default SectionWrapper(Feedbacks, "");

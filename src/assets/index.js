@@ -22,7 +22,9 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import nokia from "./company/nokia.png";
+import tigercat from "./company/tigercat_tci.jpeg";
+import marsmatics from "./company/marsmatics.jpeg";
+import nokia from "./company/nokia.jpeg";
 import arenax from "./company/arenax.png";
 import pepperdata from "./company/pepperdata.png";
 
@@ -58,6 +60,8 @@ export {
   tailwind,
   typescript,
   threejs,
+  tigercat,
+  marsmatics,
   nokia,
   arenax,
   pepperdata,

@@ -15,6 +15,8 @@ import {
     git,
     figma,
     python,
+    tigercat,
+    marsmatics,
     arenax,
     pepperdata,
     nokia,
@@ -153,6 +155,29 @@ import {
 
   const experiences = [
     {
+      title: "UX/UI Software Developer",
+      company_name: "Tigercat International Inc.",
+      icon: tigercat,
+      iconBg: "#383E56",
+      date: "Nov 2023 - Present",
+      points: [
+        "Built a real-time WebSocket-powered interface for CAN bus data, enabling efficient handling of high-frequency data streams.",
+        "Architected a user management system with authentication, role-based access, and productivity tracking, seamlessly integrating a C++ backend, SQL databases, and dynamic UI components.",
+        "Designed and implemented a dynamic system parameter adjustment interface using modular UI components and real-time model updates to support multiple machine types with minimal redundancy."
+      ],
+    },
+    {
+      title: "Software Engineer",
+      company_name: "Marsmatics",
+      icon: marsmatics,
+      iconBg: "#383E56",
+      date: "Sep 2023 - Oct 2023",
+      points: [
+        "Built a cross-platform time management app using React Native.",
+        "Designed intuitive, accessible mobile interfaces optimized for usability."
+      ],
+    },
+    {
       title: "Frontend Developer Co-op Student",
       company_name: "ArenaX Labs Inc.",
       icon: arenax,
@@ -180,7 +205,7 @@ import {
       title: "Junior Web UI Software Designer Co-op",
       company_name: "Nokia",
       icon: nokia,
-      iconBg: "#383E56",
+      iconBg: "#E6DEDD",
       date: "Jan 2021 - Apr 2021",
       points: [
         "Debugged applications, refactored reusable components using React, and implemented UI enhancements that significantly improved functionalities and overall digital experiences.",
