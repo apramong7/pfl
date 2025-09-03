@@ -1,4 +1,3 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -15,9 +14,13 @@ const FeedbackCard = ({
   image,
   link,
 }) => (
-  <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-    <Tilt
-      options={{ max: 8, scale: 1, speed: 300 }}
+  <motion.div
+    variants={fadeIn("left", "spring", 0, 0.75)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+  >
+    <div
       className="
         w-full md:w-3/4               /* ~75% on md+ */
         max-w-[1100px]                /* cap */
@@ -84,7 +87,7 @@ const FeedbackCard = ({
           </div>
         </div>
       </div>
-    </Tilt>
+    </div>
   </motion.div>
 );
 

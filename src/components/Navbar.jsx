@@ -60,38 +60,46 @@ const Navbar = () => {
           <img
             src={toggle ? close : menu}
             alt="menu"
-            className="w-[28px] h-[28px]
+            className="w-[22px] h-[22px] stroke-black
           object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)}
           />
+          {/* Dropdown wrapper */}
           <div
-            className={`${!toggle ? "hidden" : "flex"}
-            p-6 black-gradient absolute top-5 right-0 mx-4 
-            my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`${
+              !toggle ? "hidden" : "block"
+            } absolute top-4 right-0 mx-4 my-2 min-w-[100px]`}
           >
-            <ul
-              className="list-none flex
-          justify-end items-start flex-col gap-4"
-            >
-              {navLinks.map((link) => {
-                return (
-                  <li
-                    key={link.id}
-                    className={`${
-                      active === link.title ? "text-black" : "text-white"
-                    } 
-              font-poppins font-medium
-              cursor-pointer text-[16px]`}
-                    onClick={() => {
-                      setToggle(!toggle);
-                      setActive(link.title);
-                    }}
-                  >
-                    <a href={`#${link.id}`}>{link.title}</a>
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="relative">
+              {/* back sheet */}
+              <div
+                className="
+                  pointer-events-none absolute inset-0
+                  -translate-x-1 translate-y-1 bg-bg-light
+                  border border-black
+                "
+              />
+
+              {/* top sheet */}
+              <div className="relative z-10 p-6 bg-bg-light border border-black">
+                <ul className="list-none flex flex-col items-start gap-4">
+                  {navLinks.map((link) => (
+                    <li
+                      key={link.id}
+                      className={`${
+                        active === link.title ? "text-gray-800" : "text-black"
+                      } font-poppins font-medium cursor-pointer text-[16px]`}
+                      onClick={() => {
+                        setToggle(false);
+                        setActive(link.title);
+                      }}
+                    >
+                      <a href={`#${link.id}`}>{link.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

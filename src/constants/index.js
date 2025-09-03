@@ -20,6 +20,7 @@ import {
     arenax,
     pepperdata,
     nokia,
+    aicoach,
     healthweb,
     semicorchea,
     workoutwatcher,
@@ -249,6 +250,46 @@ import {
   ];
   
   const projects = [
+    {
+      name: "Fitness coach AI",
+      description:
+        "A full-stack fitness coaching app built with React/Next.js and Tailwind for a \
+        clean, responsive UI. Features Clerk authentication, Convex real-time data, and \
+        AI-powered personalization with Vapi voice interaction and Gemini AI workout and \
+        diet recommendations.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "clerk",
+          color: "green-text-gradient",
+        },
+        {
+          name: "convex",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "vapi",
+          color: "red-text-gradient",
+        },
+        {
+          name: "gemini AI",
+          color: "magenta-text-gradient",
+        },
+        {
+          name: "vercel",
+          color: "brown-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "dark-green-gradient",
+        },
+      ],
+      image: aicoach,
+      source_code_link: "https://fitness-coach-ai.vercel.app/",
+    },
     {
       name: "Health Booker",
       description:

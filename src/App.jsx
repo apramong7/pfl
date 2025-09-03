@@ -21,8 +21,8 @@ const App = () => {
           <Navbar />
           <div className="absolute inset-0 flex">
             <section
-              className="ml-auto w-[55vw] lg:mt-12 md:mt-10 sm:mt-8 xs:mt-7 mt-6
-                         sm:px-2 lg:px-8 md:px-6 px-2"
+              className="ml-auto w-[55vw] lg:mt-12 md:mt-10 sm:mt-8 xs:mt-7 mt-5
+                         sm:px-6 lg:px-8 md:px-6 px-4"
             >
               <Hero />
             </section>

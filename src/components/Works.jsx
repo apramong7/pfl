@@ -1,4 +1,3 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -15,11 +14,13 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{ max: 8, scale: 1, speed: 300 }}
-        className="sm:w-[360px] w-full"
-      >
+    <motion.div
+      variants={fadeIn("left", "spring", 0, 0.75)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+    >
+      <div className="sm:w-[360px] w-full">
         {/* stack container */}
         <div className="relative">
           {/* back sheets */}
@@ -70,7 +71,7 @@ const ProjectCard = ({
             </div>
           </div>
         </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };
@@ -84,8 +85,11 @@ const Works = () => {
 
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-white text-[17px] max-w-6xl leading-[30px]"
+          variants={fadeIn("down", "tween", 0, 1.25)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          className="mt-1 text-white text-[17px]"
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -95,7 +99,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 justify-center flex flex-wrap gap-7">
+      <div className="mt-10 justify-center flex flex-wrap gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

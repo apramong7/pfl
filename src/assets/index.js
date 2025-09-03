@@ -28,6 +28,7 @@ import nokia from "./company/nokia.jpeg";
 import arenax from "./company/arenax.png";
 import pepperdata from "./company/pepperdata.png";
 
+import aicoach from './ai-coach.png';
 import healthweb from './healthweb.png';
 import workoutwatcher from './workoutwatcher.png';
 import semicorchea from './semicorchea.png';
@@ -65,6 +66,7 @@ export {
   nokia,
   arenax,
   pepperdata,
+  aicoach,
   healthweb,
   semicorchea,
   workoutwatcher,
