@@ -26,10 +26,13 @@ const Navbar = () => {
         >
           <p
             className="text-black text-[18px]
-              font-medium  cursor-pointer flex "
+              font-aiMono-700  cursor-pointer flex "
           >
             Ana Ramon &nbsp;
-            <span className="sm:block hidden"> | Full-stack Developer</span>
+            <span className="sm:block hidden font-aiMono-700">
+              {" "}
+              | Full-stack Developer
+            </span>
           </p>
         </Link>
         <ul
@@ -44,10 +47,12 @@ const Navbar = () => {
                   active === link.title ? "text-gray-600" : "text-black"
                 } 
               hover: text-black text-[18px]
-              font-medium cursor-pointer`}
+              font-aiMono-700 cursor-pointer`}
                 onClick={() => setActive(link.title)}
               >
-                <a href={`#${link.id}`}>{link.title}</a>
+                <a href={`#${link.id}`} style={{ fontFamily: "aiMono-700" }}>
+                  {link.title}
+                </a>
               </li>
             );
           })}
@@ -88,13 +93,15 @@ const Navbar = () => {
                       key={link.id}
                       className={`${
                         active === link.title ? "text-gray-800" : "text-black"
-                      } font-poppins font-medium cursor-pointer text-[16px]`}
+                      } font-poppins font-medium cursor-pointer font-aiMono-700 text-[16px]`}
                       onClick={() => {
                         setToggle(false);
                         setActive(link.title);
                       }}
                     >
-                      <a href={`#${link.id}`}>{link.title}</a>
+                      <a href={`#${link.id}`} style={{ fontFamily: "aiMono" }}>
+                        {link.title}
+                      </a>
                     </li>
                   ))}
                 </ul>

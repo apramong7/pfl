@@ -19,23 +19,28 @@ const TimelineCard = ({ experience }) => {
 
       {/* front sheet */}
       <div className="relative z-10 bg-bg-light border border-black p-4">
-        <h3 className="text-black text-[28px] leading-tight font-semibold">
+        <h3 className="text-black font-aiMono-700 text-[28px] leading-tight font-semibold">
           {experience.title}
         </h3>
-        <p className="font-semibold text-black text-[16px] leading-6">
+        <p className="font-aiMono-700 text-black text-[16px] leading-6">
           {experience.company_name}
         </p>
 
         <ul className="mt-5 list-disc ml-5 space-y-2">
           {experience.points.map((point, i) => (
-            <li key={i} className="text-black text-[14px] pl-1 tracking-wider">
+            <li
+              key={i}
+              className="text-black font-aiMono text-[14px] pl-1 tracking-wider"
+            >
               {point}
             </li>
           ))}
         </ul>
 
         {/* date at the end of the card */}
-        <p className="mt-6 text-sm text-gray-600 italic">{experience.date}</p>
+        <p className="mt-6 font-aiMono text-sm text-gray-600 italic">
+          {experience.date}
+        </p>
       </div>
     </div>
   );

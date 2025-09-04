@@ -86,7 +86,7 @@ const Contact = () => {
                 className="p-6 flex flex-col gap-6"
               >
                 <label className="flex flex-col">
-                  <span className="text-black font-semibold mb-2">
+                  <span className="text-black font-aiMono-700 mb-2">
                     Your Name
                   </span>
                   <input
@@ -96,13 +96,13 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="What's your name?"
                     className="bg-white text-black placeholder-gray-500
-                       border-2 border-black rounded-none
+                       border-2 border-black rounded-none font-aiMono
                        px-4 py-3 outline-none focus:outline-none focus:ring-0"
                   />
                 </label>
 
                 <label className="flex flex-col">
-                  <span className="text-black font-semibold mb-2">
+                  <span className="text-black font-aiMono-700 mb-2">
                     Your Email
                   </span>
                   <input
@@ -112,13 +112,13 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="What's your email?"
                     className="bg-white text-black placeholder-gray-500
-                       border-2 border-black rounded-none
+                       border-2 border-black rounded-none font-aiMono
                        px-4 py-3 outline-none focus:outline-none focus:ring-0"
                   />
                 </label>
 
                 <label className="flex flex-col">
-                  <span className="text-black font-semibold mb-2">
+                  <span className="text-black font-aiMono-700 mb-2">
                     Your Message
                   </span>
                   <textarea
@@ -129,7 +129,7 @@ const Contact = () => {
                     placeholder="What do you want to say?"
                     className="bg-white text-black placeholder-gray-500
                        border-2 border-black rounded-none
-                       px-4 py-3 min-h-32 resize-y
+                       px-4 py-3 min-h-32 resize-y font-aiMono
                        outline-none focus:outline-none focus:ring-0"
                   />
                 </label>
@@ -137,7 +137,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="self-start bg-gray-200 border-4 border-black
-                     px-6 py-3 text-black font-semibold
+                     px-4 py-2 text-black font-aiMono-700 m-auto
                      hover:-translate-y-0.5 hover:-translate-x-0.5
                      transition-transform"
                 >

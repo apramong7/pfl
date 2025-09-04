@@ -34,10 +34,10 @@ const ProjectCard = ({
                 <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />
                 <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />
               </div>
-              <span className="text-black font-semibold">{name}</span>
+              <span className="text-black font-aiMono-700">{name}</span>
             </div>
 
-            {/* hero image */}
+            {/* project image */}
             <div className="w-full h-44 sm:h-52 border-b-2 border-black">
               <img
                 src={image}
@@ -48,13 +48,13 @@ const ProjectCard = ({
 
             {/* body */}
             <div className="p-6">
-              <p className="mt-4 text-black text-[16px] leading-7">
+              <p className="mt-4 text-black font-aiMono text-[16px] leading-7">
                 {description}
               </p>
 
               <button
                 onClick={() => window.open(source_code_link, "_blank")}
-                className="mt-6 m-auto flex bg-gray-200 border-4 border-black px-6 py-3 text-[16px] font-semibold
+                className="mt-6 m-auto flex bg-gray-200 border-4 border-black px-6 py-3 text-[16px] font-aiMono-700
                            hover:-translate-y-0.5 hover:-translate-x-0.5 transition-transform text-black"
                 aria-label={`View ${name}`}
               >
@@ -63,7 +63,10 @@ const ProjectCard = ({
 
               <div className="mt-6 flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <span key={tag.name} className={`text-[14px] ${tag.color}`}>
+                  <span
+                    key={tag.name}
+                    className={`font-aiMono text-[14px] ${tag.color}`}
+                  >
                     #{tag.name}
                   </span>
                 ))}
@@ -89,7 +92,7 @@ const Works = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-1 text-white text-[17px]"
+          className="mt-1 font-aiMono text-white text-[17px]"
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with

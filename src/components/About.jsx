@@ -14,7 +14,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-0 text-white text-[17px]
+        className="mt-0 text-white font-aiMono text-[17px]
         max-w-6xl leading-[30px]"
       >
         Hey! I&#39;m Ana Ramon, an enthusiastic Mechatronics Engineering

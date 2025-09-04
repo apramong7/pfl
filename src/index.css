@@ -13,6 +13,38 @@
   color-scheme: dark;
 }
 
+@font-face {
+  font-family: "aiMono";
+  src: url("./assets/fonts/ia-writer-mono-latin-400-normal.ttf") format("ttf"),
+    url("./assets/fonts/ia-writer-mono-latin-400-normal.woff") format("woff"),
+    url("./assets/fonts/ia-writer-mono-latin-400-normal.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "aiMono-700";
+  src: url("./assets/fonts/ia-writer-mono-latin-700-normal.ttf") format("ttf"),
+    url("./assets/fonts/ia-writer-mono-latin-700-normal.woff") format("woff"),
+    url("./assets/fonts/ia-writer-mono-latin-700-normal.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "archimotov";
+  src: url("./assets/fonts/Demoarchimotov01Black-8MD5g.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "archimotov-medium";
+  src: url("./assets/fonts/Demoarchimotov01Medium-rg1Ky.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

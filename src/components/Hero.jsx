@@ -1,4 +1,5 @@
 import { styles } from "../styles";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => (
   <section className="text-right">
@@ -6,10 +7,18 @@ const Hero = () => (
       <h1 className={`${styles.heroHeadText} leading-tight`}>
         Hi, I&#39;m Ana Ramon
       </h1>
-      <p className={`${styles.heroSubText} mt-1`}>
-        Full-stack developer <br className="sm:block hidden" />
-        crafting captivating web experiences
-      </p>
+      <TypeAnimation
+        className={`${styles.heroSubText} mt-1 leading-1`}
+        style={{ whiteSpace: "normal", display: "block" }}
+        sequence={[
+          `Full-stack developer\ncrafting captivating web experiences.`,
+          3000, // Pause for 3 second
+          "", // Clear the text
+        ]}
+        speed={30}
+        repeat={Infinity}
+        cursor={false}
+      />
     </div>
   </section>
 );

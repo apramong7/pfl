@@ -51,7 +51,7 @@ const FeedbackCard = ({
               <span className="w-3 h-3 rounded-full border-2 border-black bg-white" />
             </div>
 
-            <span className="text-black font-semibold text-center leading-snug break-words">
+            <span className="text-black font-aiMono-700 text-center leading-snug break-words">
               {[company, place].filter(Boolean).join(" — ")}
             </span>
           </div>
@@ -67,17 +67,17 @@ const FeedbackCard = ({
 
           {/* body */}
           <div className="p-6">
-            <h3 className="text-black font-extrabold text-[28px] leading-tight">
+            <h3 className="text-black font-aiMono-700 text-[28px] leading-tight">
               {name}
             </h3>
-            <p className="mt-4 text-black text-[16px] leading-7">
+            <p className="mt-4 text-black font-aiMono text-[16px] leading-7">
               {description}
             </p>
 
             {link && (
               <button
                 onClick={() => window.open(link, "_blank")}
-                className="mt-6 m-auto flex bg-gray-200 border-4 border-black px-6 py-3 text-[16px] font-semibold
+                className="mt-6 m-auto flex bg-gray-200 border-4 border-black px-6 py-3 text-[16px] font-aiMono-700
                            hover:-translate-y-0.5 hover:-translate-x-0.5 transition-transform text-black"
                 aria-label={`Open ${name}`}
               >
